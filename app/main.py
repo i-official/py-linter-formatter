@@ -8,12 +8,12 @@ def format_linter_error(errors: dict) -> dict:
     }
 
 
-
 def format_single_linter_file(file_path: str, errors: list) -> dict:
     return {
         "errors": [format_linter_error(el) for el in errors],
         "path": file_path,
         "status": "passed" if not errors else "failed"}
+
 
 def format_linter_report(linter_report: dict) -> list:
     return [
